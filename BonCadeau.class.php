@@ -41,15 +41,16 @@ public function getPriceMontant() {
 }
 
 public function getFullNameBeneficiaire(){
-    return $this->lastnamebeneficiaire." ".$this->firstnamebeneficiaire;
+    return strtoupper($this->firstnamebeneficiaire)." ".$this->lastnamebeneficiaire;
     }
 
     public function getFullNameDonnateur(){
-        return $this->lastnamedonnateur." ".$this->firstnamedonnateur;
+        return strtoupper($this->firstnamedonnateur)." ".$this->lastnamedonnateur;
         }
 
+       
 public function setDate(string $date) {
-    if ($date > 2022/05/05) {
+    if ($this ->date > 2022/05/05) {
         $this->date = $date;
     }
 }
