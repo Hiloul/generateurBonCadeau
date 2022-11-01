@@ -26,7 +26,7 @@ public function showAll(){
 
 public function AfficherBonCadeau(){?>
 <section>
-    <p>Montant du bon: <?=$this->getPriceMontant(); ?></p>
+    <p>Montant du bon: <?=random_int(10,10000)?></p>
     <p>Beneficiaire: <?= $this->getFullNameBeneficiaire();?></p>
     <p>Donnateur: <?= $this->getFullNameDonnateur();?></p>
     <p>Date: <?=$this->date ?></p>
@@ -39,6 +39,7 @@ public function getPriceMontant() {
         return $this->price.'€';
     } 
 }
+
 
 public function getFullNameBeneficiaire(){
     return strtoupper($this->firstnamebeneficiaire)." ".$this->lastnamebeneficiaire;
@@ -75,30 +76,3 @@ Dans le constructeur, créer la valeur de la propriété date d'expiration en
 ajoutant un an à la date du bon
 </p>
 
-<?php
-/*
- * L'entrée est constituée de champs séparés par un point-virgule,
- * et le premier champ est un ID à utiliser comme clé.
- */
-
-$input = <<<'EOF'
-1;PHP;Likes dollar signs
-2;Python;Likes whitespace
-3;Ruby;Likes blocks
-EOF;
-
-function input_parser($input) {
-    foreach (explode("\n", $input) as $line) {
-        $fields = explode(';', $line);
-        $id = array_shift($fields);
-
-        yield $id => $fields;
-    }
-}
-
-foreach (input_parser($input) as $id => $fields) {
-    echo "$id:\n";
-    echo "    $fields[0]\n";
-    echo "    $fields[1]\n";
-}
-?>
