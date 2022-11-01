@@ -58,7 +58,7 @@ public function setDate(string $date) {
 
 
 //creer un nouvel objet stocke dans => constructeur pour passe les donnees 
-$boncadeau1 = new BonCadeau(5000, "Monsieur","Louis","MAdame","LOuisa","2022/07/08");
+$boncadeau1 = new BonCadeau(5000, "Louis","Monsieur","Louisa","Madame","2022/07/08");
 echo $boncadeau1->AfficherBonCadeau()."<br>";
 
 ?> 
