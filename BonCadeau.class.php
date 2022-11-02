@@ -26,10 +26,11 @@ public function showAll(){
 
 public function AfficherBonCadeau(){?>
 <section>
-    <p>Montant du bon: <?=random_int(10,10000).'€'?></p>
+    <p>Montant du bon: <?=$this->getPriceMontant().'€'?></p>
     <p>Beneficiaire: <?= $this->getFullNameBeneficiaire();?></p>
     <p>Donnateur: <?= $this->getFullNameDonnateur();?></p>
     <p>Date: <?=$this->date ?></p>
+    <p>Numero du bon: <?= random_int(10,10000)?></p>
     </section>
     <?php
 }
